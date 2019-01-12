@@ -23,4 +23,17 @@ public class RobotMap {
   // number and the module. For example you with a rangefinder:
   // public static int rangefinderPort = 1;
   // public static int rangefinderModule = 1;
+
+  //DK declared mappings
+  public static int joystick1port = 0;
+  public static int LED_ON_Button = 1;
+  public static int LED_OFF_Button = 2;
+  public static int LED_1S_Button = 3;
+
+
+  public static int GreenLEDPin = 0;
+  public static int RedLEDPin = 1;
+  public static int YellowLEDPin = 2;
+
+
 }

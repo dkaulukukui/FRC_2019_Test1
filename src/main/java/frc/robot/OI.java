@@ -10,9 +10,13 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-
 import frc.robot.commands.LED_OFF;
 import frc.robot.commands.LED_ON;
+import frc.robot.commands.LED_ON_FOR_T;
+
+//import frc.robot.Robot;
+//import frc.robot.commands.LED_OFF;
+//import frc.robot.commands.LED_ON;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -27,11 +31,11 @@ public class OI {
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
 
-  Joystick stick0 = new Joystick(0);  //DK added to create new joystick input
-  Button button1 = new JoystickButton(stick0, 1);  //DK added to create button
-  Button button2 = new JoystickButton(stick0, 2);
-  Button button3 = new JoystickButton(stick0, 3); 
-
+  Joystick stick0 = new Joystick(RobotMap.joystick1port);  //DK added to create new joystick input
+  Button LED_ON_Button = new JoystickButton(stick0, RobotMap.LED_ON_Button);  //DK added to create button
+  Button LED_OFF_Button = new JoystickButton(stick0, RobotMap.LED_OFF_Button); 
+  Button LED_1S_Button = new JoystickButton(stick0, RobotMap.LED_1S_Button);
+  
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
   // commands the same as any other Button.
@@ -45,8 +49,13 @@ public class OI {
   // button.whenPressed(new ExampleCommand());
 
   public OI() {
-    button1.whenPressed(new LED_ON());
-    button2.whenPressed(new LED_OFF());
+    LED_ON_Button.whenPressed(new LED_ON());
+
+    LED_OFF_Button.whenPressed(new LED_OFF());
+
+    LED_1S_Button.whenPressed(new LED_ON_FOR_T());
+
+    
   }  
 
   // Run the command while the button is being held down and interrupt it once
@@ -57,3 +66,4 @@ public class OI {
   // until it is finished as determined by it's isFinished method.
   // button.whenReleased(new ExampleCommand());
 }
+     

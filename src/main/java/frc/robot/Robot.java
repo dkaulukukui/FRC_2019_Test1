@@ -16,6 +16,8 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ExampleSubsystem;
 
 import frc.robot.subsystems.LED_Subsystem; //DK_New Subsystem added for LED output
+//import frc.robot.commands.LED_OFF;
+//import frc.robot.commands.LED_ON;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,7 +34,6 @@ public class Robot extends TimedRobot {
   SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   public static LED_Subsystem LEDs = new LED_Subsystem();  // DK added to declare new LED subystem
-
 
   /**
    * This function is run when the robot is first started up and should be

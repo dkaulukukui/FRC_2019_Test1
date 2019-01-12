@@ -8,7 +8,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import frc.robot.Robot;
+import frc.robot.Robot; //added by DK
 
 public class LED_ON extends Command {
   public LED_ON() {
@@ -26,9 +26,9 @@ public class LED_ON extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.LEDs.Red_LED.set(true);
-    Robot.LEDs.Yellow_LED.set(true);
-    Robot.LEDs.Green_LED.set(true);
+    Robot.LEDs.Red_LED.set(false);   //DK added
+    Robot.LEDs.Yellow_LED.set(false); //DK added 
+    Robot.LEDs.Green_LED.set(false);  //DK added
   }
 
   // Make this return true when this Command no longer needs to run execute()

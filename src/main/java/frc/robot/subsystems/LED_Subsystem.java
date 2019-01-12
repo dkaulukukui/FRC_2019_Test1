@@ -9,9 +9,9 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.command.Subsystem;
-
+import frc.robot.RobotMap;
 import frc.robot.commands.LED_OFF; //Added by DK
-
+  
 /**
  * Add your docs here.
  */
@@ -19,9 +19,9 @@ public class LED_Subsystem extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public DigitalOutput Green_LED = new DigitalOutput(0);
-  public DigitalOutput Red_LED = new DigitalOutput(1);
-  public DigitalOutput Yellow_LED = new DigitalOutput(2);
+  public DigitalOutput Green_LED = new DigitalOutput(RobotMap.GreenLEDPin);
+  public DigitalOutput Red_LED = new DigitalOutput(RobotMap.RedLEDPin);
+  public DigitalOutput Yellow_LED = new DigitalOutput(RobotMap.YellowLEDPin);
 
   @Override
   public void initDefaultCommand() {
